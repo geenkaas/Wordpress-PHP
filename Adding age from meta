@@ -1,0 +1,13 @@
+/*
+Adds age from a birthday to Wordpress, age should be added to a post as a birthdate
+Will output age as a regular number. 
+Used in Fairminds recipies and designs
+http://www.fairminds.nl/acties/dyo/ingestuurde-designs/
+/**/
+
+<?php
+  $birthdate = get_user_meta($user->ID, 'birthday', true);
+  $birthdate = strtotime(str_replace('/', '-', $birthdate));
+  $age = floor((time() - $birthdateU) / (60*60*24*365.25));
+  echo $age;
+?>
